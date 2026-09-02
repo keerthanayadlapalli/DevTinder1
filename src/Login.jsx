@@ -20,7 +20,7 @@ const Login = () => {
     <div className="w-full flex justify-center items-center my-8">
       <div className="bg-base-300 rounded-box w-96 p-8 shadow-lg">
 
-        <h1 className="text-2xl font-bold mb-6">
+        <h1 className="text-2xl font-bold mb-7">
           Login
         </h1>
 
