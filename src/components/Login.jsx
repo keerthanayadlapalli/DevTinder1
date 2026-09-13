@@ -8,6 +8,7 @@ import Base_URL from '../utils/constants';
 const Login = () => {
   const [emailId, setEmailId] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleLogin = async() => {
@@ -20,7 +21,8 @@ const Login = () => {
     return navigate('/');
     }
     catch(err){
-      console.log(err);
+      setError(err?.response?.data || err.message);
+      
     }
   }
   return (
@@ -48,7 +50,7 @@ const Login = () => {
           className="input w-full"
           placeholder="Enter your password"
         />
-
+        <p className="text-red-500 pt-3">{error}</p>
         <button className="btn btn-neutral w-full mt-8" onClick={handleLogin}>
           Login
         </button>
