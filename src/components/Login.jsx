@@ -50,7 +50,7 @@ const Login = () => {
           className="input w-full"
           placeholder="Enter your password"
         />
-        <p className="text-red-500 pt-3">{error}</p>
+        <p className="text-red-100 pt-3">{error}</p>
         <button className="btn btn-neutral w-full mt-8" onClick={handleLogin}>
           Login
         </button>
