@@ -1,4 +1,3 @@
-import React from 'react';
 import {useState} from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
@@ -21,10 +20,7 @@ const Login = () => {
     return navigate('/');
     }
   catch (err) {
-  console.log("message:", err.message);
-  console.log("status:", err.status);
-  console.log("response:", err.response);
-  console.log("response data:", err.response?.data);
+    setError(err.response?.data?.message || "Login failed. Please try again.");
 }
   }
   return (
