@@ -20,10 +20,12 @@ const Login = () => {
     dispatch(addUser(res.data));
     return navigate('/');
     }
-    catch(err){
-      setError(err?.response?.data || err.message);
-      
-    }
+  catch (err) {
+  console.log("message:", err.message);
+  console.log("status:", err.status);
+  console.log("response:", err.response);
+  console.log("response data:", err.response?.data);
+}
   }
   return (
     <div className="w-full flex justify-center items-center my-8">
@@ -50,7 +52,7 @@ const Login = () => {
           className="input w-full"
           placeholder="Enter your password"
         />
-        <p className="text-red-100 pt-3">{error}</p>
+        <p className="text-red-500 pt-3">{error}</p>
         <button className="btn btn-neutral w-full mt-8" onClick={handleLogin}>
           Login
         </button>
