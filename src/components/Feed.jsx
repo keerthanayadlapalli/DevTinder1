@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import {useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import { addFeed } from '../utils/feedSlice';
+import UserCard from './UserCard';
 
 const Feed = () => {
   const feed = useSelector((store) =>store.feed);
@@ -23,7 +24,12 @@ const Feed = () => {
   useEffect(()=>{
     getFeed();
   },[]);
-  return <div>Feed</div>
+  return (
+  feed && (<div className ="flex flex-wrap gap-4 justify-center">
+    <UserCard  user={feed[0]}/>
+  </div>
+  )
+);
 }
 
 export default Feed;
