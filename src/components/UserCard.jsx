@@ -1,5 +1,4 @@
 import React from 'react'
-
 const UserCard = ({ user }) => {
     console.log("user:", user);
   return (
@@ -19,4 +18,4 @@ const UserCard = ({ user }) => {
   )
 }
 
-export default UserCard
+export default UserCard;
