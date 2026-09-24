@@ -8,7 +8,6 @@ import { addUser } from '../utils/userSlice';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-
 const Body = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -30,9 +29,7 @@ const Body = () => {
   useEffect(()=>{
    fetchUser(); 
   },[]);
-
-  if (isLoading) return null;
-  
+if (isLoading) return null;
   return (
     <div>
       <Navbar />
@@ -41,5 +38,4 @@ const Body = () => {
     </div>
   );
 };
-
 export default Body;
