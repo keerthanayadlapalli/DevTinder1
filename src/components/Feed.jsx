@@ -26,7 +26,7 @@ const Feed = () => {
   },[]);
   return (
   feed && (<div className ="flex flex-wrap gap-4 justify-center">
-    <UserCard  user={feed[1]}/>
+    <UserCard  user={feed[0]}/>
   </div>
   )
 );
