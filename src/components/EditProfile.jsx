@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
 import UserCard from './UserCard';
+import { useState } from 'react';
+
 import axios from 'axios';
 import Base_URL from '../utils/constants';
 const EditProfile = ({user}) => {
@@ -22,8 +23,15 @@ const EditProfile = ({user}) => {
             },{withCredentials: true});
         }
         catch (err) {
-            setError(err.response?.data?.message || "Profile update failed. Please try again.");
-        }
+    console.log("Error:", err.response?.data || err.message);
+
+    setError(
+        typeof err.response?.data === "string"
+            ? err.response.data
+            : err.response?.data?.message ||
+              "Profile update failed. Please try again."
+    );
+}
     }
   return (
     <div className = "flex justify-center my-8">
@@ -86,5 +94,4 @@ const EditProfile = ({user}) => {
     </div>
   )
 }
-
-export default EditProfile
+export default EditProfile;

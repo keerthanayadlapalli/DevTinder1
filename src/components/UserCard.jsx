@@ -1,4 +1,3 @@
-import React from 'react';
 const UserCard = ({ user }) => {
     return (
         <div className="card bg-base-500 w-72 shadow-sm">
