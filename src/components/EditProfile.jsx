@@ -1,8 +1,8 @@
 import UserCard from './UserCard';
 import { useState } from 'react';
-
 import axios from 'axios';
 import Base_URL from '../utils/constants';
+
 const EditProfile = ({user}) => {
     const [firstName, setFirstName] = useState(user.firstName);
     const [lastName, setLastName] = useState(user.lastName);
@@ -90,7 +90,7 @@ const EditProfile = ({user}) => {
 
       </div>
     </div>
-    <UserCard  user={{ firstName, lastName, age, gender, about, photoURL }}/>
+    <UserCard  user={{ firstName, lastName, age, gender, about, photoURL}}/>
     </div>
   )
 }
